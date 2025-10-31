@@ -1,4 +1,5 @@
 pub mod app_error_impl;
+pub mod cache;
 pub mod clients;
 pub mod http;
 pub mod openapi;
