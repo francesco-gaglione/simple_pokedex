@@ -1,6 +1,7 @@
 use moka::future::Cache;
 use std::time::Duration;
 
+#[allow(dead_code)]
 #[derive(Clone)]
 pub struct TranslationCache {
     cache: Cache<String, String>,
@@ -22,9 +23,5 @@ impl TranslationCache {
 
     pub async fn insert(&self, key: String, value: String) {
         self.cache.insert(key, value).await
-    }
-
-    pub fn clear(&self) {
-        self.cache.invalidate_all();
     }
 }

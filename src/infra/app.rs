@@ -1,6 +1,6 @@
 use crate::{
     adapters::{
-        http::{app_state::AppState, routes::routes::api_routes},
+        http::{app_state::AppState, routes::api_routes::api_routes},
         openapi::ApiDoc,
     },
     infra::setup::init_tracing,

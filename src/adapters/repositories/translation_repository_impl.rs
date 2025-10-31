@@ -1,23 +1,19 @@
 use async_trait::async_trait;
-use moka::future::Cache;
 use std::sync::Arc;
-use std::time::Duration;
 
+use crate::adapters::cache::translation_cache::TranslationCache;
 use crate::adapters::clients::funtranslations::FunsTranslationsApiClient;
 use crate::application::app_error::AppResult;
 use crate::application::traits::TranslationRepository;
 
 pub struct TranslationRepositoryImpl {
     fun_translations_client: Arc<FunsTranslationsApiClient>,
-    cache: Cache<String, String>,
+    cache: TranslationCache,
 }
 
 impl TranslationRepositoryImpl {
     pub fn new(fun_translations_client: Arc<FunsTranslationsApiClient>) -> Self {
-        let cache = Cache::builder()
-            .max_capacity(1000)
-            .time_to_live(Duration::from_secs(300))
-            .build();
+        let cache = TranslationCache::new(300);
 
         Self {
             fun_translations_client,

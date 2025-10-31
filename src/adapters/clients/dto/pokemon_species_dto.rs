@@ -2,54 +2,82 @@ use serde::Deserialize;
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct PokemonSpeciesResponseDto {
+    #[allow(dead_code)]
     pub id: i32,
     pub name: String,
+    #[allow(dead_code)]
     pub order: i32,
+    #[allow(dead_code)]
     pub gender_rate: i32,
+    #[allow(dead_code)]
     pub capture_rate: i32,
+    #[allow(dead_code)]
     pub base_happiness: i32,
+    #[allow(dead_code)]
     pub is_baby: bool,
     pub is_legendary: bool,
+    #[allow(dead_code)]
     pub is_mythical: bool,
+    #[allow(dead_code)]
     pub hatch_counter: i32,
+    #[allow(dead_code)]
     pub has_gender_differences: bool,
+    #[allow(dead_code)]
     pub forms_switchable: bool,
+    #[allow(dead_code)]
     pub growth_rate: NamedApiResource,
+    #[allow(dead_code)]
     pub pokedex_numbers: Vec<PokemonDexEntry>,
+    #[allow(dead_code)]
     pub egg_groups: Vec<NamedApiResource>,
+    #[allow(dead_code)]
     pub color: NamedApiResource,
+    #[allow(dead_code)]
     pub shape: NamedApiResource,
+    #[allow(dead_code)]
     pub evolves_from_species: Option<NamedApiResource>,
+    #[allow(dead_code)]
     pub evolution_chain: ApiResource,
     pub habitat: Option<NamedApiResource>,
+    #[allow(dead_code)]
     pub generation: NamedApiResource,
+    #[allow(dead_code)]
     pub names: Vec<Name>,
     pub flavor_text_entries: Vec<FlavorText>,
+    #[allow(dead_code)]
     pub form_descriptions: Vec<Description>,
+    #[allow(dead_code)]
     pub genera: Vec<Genus>,
+    #[allow(dead_code)]
     pub varieties: Vec<PokemonVariety>,
 }
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct NamedApiResource {
     pub name: String,
+    #[allow(dead_code)]
     pub url: String,
 }
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct ApiResource {
+    #[allow(dead_code)]
     pub url: String,
 }
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct PokemonDexEntry {
+    #[allow(dead_code)]
     pub entry_number: i32,
+    #[allow(dead_code)]
     pub pokedex: NamedApiResource,
 }
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct Name {
+    #[allow(dead_code)]
     pub name: String,
+    #[allow(dead_code)]
     pub language: NamedApiResource,
 }
 
@@ -57,25 +85,33 @@ pub struct Name {
 pub struct FlavorText {
     #[serde(rename = "flavor_text")]
     pub text: String,
+    #[allow(dead_code)]
     pub language: NamedApiResource,
+    #[allow(dead_code)]
     pub version: NamedApiResource,
 }
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct Description {
+    #[allow(dead_code)]
     pub description: String,
+    #[allow(dead_code)]
     pub language: NamedApiResource,
 }
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct Genus {
+    #[allow(dead_code)]
     pub genus: String,
+    #[allow(dead_code)]
     pub language: NamedApiResource,
 }
 
 #[derive(Debug, Deserialize, Clone)]
 pub struct PokemonVariety {
+    #[allow(dead_code)]
     pub is_default: bool,
+    #[allow(dead_code)]
     pub pokemon: NamedApiResource,
 }
 
